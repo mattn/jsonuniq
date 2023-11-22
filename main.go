@@ -46,8 +46,8 @@ func run() error {
 		fatalIf(err)
 		if _, ok := seen[v1]; !ok {
 			enc.Encode(v)
+			seen[v1] = struct{}{}
 		}
-		seen[v1] = struct{}{}
 	}
 	return nil
 }
